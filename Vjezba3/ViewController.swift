@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var konacniBrojCipelaLabel: UILabel!
+    
+    @IBOutlet weak var unesiteBrojCipelaTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,33 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func brojCipelaZaNuskarceDugmePritisnuto(sender: UIButton) {
+        var stringUneseniBrojCipela = unesiteBrojCipelaTextField.text
+        var integerUneseniBrojCipela = stringUneseniBrojCipela.toInt()!
+        
+        let konstantaBrojaCipela = 30
+        
+        integerUneseniBrojCipela += konstantaBrojaCipela
+        
+        konacniBrojCipelaLabel.hidden = false
+        konacniBrojCipelaLabel.text = "Vas broj cipela prema evropskom mjerenju je \(integerUneseniBrojCipela)."
+        unesiteBrojCipelaTextField.text = ""
+        unesiteBrojCipelaTextField.resignFirstResponder()
+    }
 
+    @IBAction func brojCipelaZaZeneDugmePritisnuto(sender: UIButton) {
+        
+        let stringUneseniBrojCipela = unesiteBrojCipelaTextField.text
+        var doubleUneseniBrojCipela = Double((stringUneseniBrojCipela as NSString).doubleValue)
+        let konstantaZenskogBrojaCipela = 30.5
+        
+        doubleUneseniBrojCipela += konstantaZenskogBrojaCipela
+        
+        konacniBrojCipelaLabel.hidden = false
+        konacniBrojCipelaLabel.text = "Vas broj cipela prema evropskom mjerenju je \(doubleUneseniBrojCipela)."
+        
+        unesiteBrojCipelaTextField.text = ""
+        unesiteBrojCipelaTextField.resignFirstResponder()
+    }
 }
 
