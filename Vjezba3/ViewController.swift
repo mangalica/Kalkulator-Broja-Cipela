@@ -23,6 +23,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // Izracun za MUSKE cipele
 
     @IBAction func brojCipelaZaNuskarceDugmePritisnuto(sender: UIButton) {
         var stringUneseniBrojCipela = unesiteBrojCipelaTextField.text
@@ -37,6 +39,8 @@ class ViewController: UIViewController {
         unesiteBrojCipelaTextField.text = ""
         unesiteBrojCipelaTextField.resignFirstResponder()
     }
+    
+    // Izracun za ZENSKE cipele
 
     @IBAction func brojCipelaZaZeneDugmePritisnuto(sender: UIButton) {
         
